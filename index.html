@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>1st page on ubunity</title>
+    <title>1st page on ubunity</title>
 </head>
 
 <body>
-<h2>Hello, GitHub!</h2>
-<p>Blah blah blah</p>
+    <h2>Hello, GitHub!</h2>
+    <p id="par1">Blah blah blah</p>
+    <input type="text" name="jsin" id="jsin"/>
+    <button onclick="go()">Go</button>
+    <script>
+        console.log("Hello, world!");
+        function go() {
+            console.log("Go!!!");
+            var a = document.getElementById("par1");
+            var b = document.getElementById("jsin");
+            a.textContent="Hello " + b.value;
+        }
+    </script>
 </body>
+
 </html>
