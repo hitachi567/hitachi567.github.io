@@ -2,22 +2,73 @@
 <html>
 
 <head>
-    <title>1st page on ubunity</title>
+    <title>Автобусный парк</title>
+    
 </head>
 
 <body>
-    <h2>Hello, GitHub!</h2>
-    <p id="par1">Blah blah blah</p>
-    <input type="text" name="jsin" id="jsin"/>
-    <button onclick="go()">Go</button>
-    <script>
-        console.log("Hello, world!");
-        function go() {
-            console.log("Go!!!");
-            var a = document.getElementById("par1");
-            var b = document.getElementById("jsin");
-            a.textContent="Hello " + b.value;
+    <style>
+        #operatorForm {
+            border-color: rgb(131, 245, 226);
+            border-width: medium;
+            border-style: solid;
+            background-color: rgb(131, 245, 226);
         }
+    </style>
+
+    <h2>Окно оператора</h2>
+
+    <dev id="operatorForm">
+        <form action="#">
+            <input type="text" name="numberBus" id="numberBus" placeholder="Номер автобуса">
+            <br>
+            <input type="text" name="driverName" id="driverName" placeholder="Имя водителя">
+            <br>
+            <input type="text" name="arrivalTime" id="arrivalTime" placeholder="Время прибытия в депо">
+            <br>
+            <input type="text" name="departureTime" id="departureTime" placeholder="Время отправки из депо">
+            <br>
+
+            <button type="submit" onclick="submitForm()">Submit</button>
+        </form>
+    </dev>
+
+    <dev>
+        <p>Последнее изменение:</p>
+        <p id="paragraph"></p>
+    </dev>
+
+    <script>
+        function submitForm() {
+            var result = "";
+            for (var i = 0; i < 4; i++) {
+                var id = "";
+                switch (i) {
+                    case 0:
+                        id = "numberBus";
+                        break;
+                    case 1:
+                        id = "driverName";
+                        break;
+                    case 2:
+                        id = "arrivalTime";
+                        break;
+                    case 3:
+                        id = "departureTime";
+                        break;
+                }
+                var value = document.getElementById(id);
+                value = String(value.value);
+                console.log(id + " = " + value);
+                value += " ";
+                result += value;
+            }
+            console.log(result);
+            localStorage.setItem("savedData", result);
+        }
+        var paragraph = document.getElementById("paragraph");
+        var a = localStorage.getItem("savedData");
+        paragraph.textContent = a;
     </script>
 </body>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS help</title>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<style> /*This is inline CSS aka Cascading Style Sheets*/
+
+h2 { /*This is selector CSS for all h2 element's*/
+	color: rgb(50, 221, 184);
+}
+
+.class1 { /*This is class. Классы - это стили многократного использования*/
+	color: rgb(108, 108, 202); /*Цвет текста*/
+
+
+	font-size:medium; 
+	 /*Размер шрифта*/
+
+	font-family: "Lobster", monospace;
+
+	
+}
+
+
+.larger-image {
+    width: 500px;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+  }
+
+</style>
+
+
+<h2 style="color: rgb(209, 121, 250); /*This is inline CSS*/">h2 with their own style</h2>
+
+<h2>h2 with the general style</h2>
+
+<p class="class1">class1 here. </p>
+
+<img class="larger-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+<!--Можно использовать несколько классов через пробел-->
+</body>
+</html>
