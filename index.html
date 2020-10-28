@@ -8,28 +8,64 @@
 
 <body>
     <style>
-        #operatorForm {
-            border-color: rgb(131, 245, 226);
-            border-width: medium;
-            border-style: solid;
-            background-color: rgb(131, 245, 226);
+
+        #centerText{
+            text-align: center;
         }
+
+        header {
+            background-color: rgb(131, 245, 226);
+            color: #FFF;
+        }
+        #operatorForm {
+            display: block;
+            position: relative;
+            border: 1px solid #ccc;
+            background-color: rgb(131, 245, 226);
+            border-radius: 5px;
+            margin: 5% auto;
+            width: 30%;
+        }
+
+        .field{
+            display: block;
+            position: relative;
+            border: 1px solid rgb(131, 245, 226);
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .button{
+            height: auto;
+            display: block;
+            position: relative;
+            border: 1px solid white;
+            border-radius:  5px;
+            background-color: repeating-linear-gradient(
+                35deg,rgb(142, 235, 207), rgb(181, 90, 235),
+                );
+            margin: 0 auto;       
+        }
+
     </style>
 
-    <h2>Окно оператора</h2>
+    <header>
+        <h1>Автобусный парк</h1>
+    </header>
 
     <dev id="operatorForm">
+        <h2>Окно оператора</h2>
         <form action="#">
-            <input type="text" name="numberBus" id="numberBus" placeholder="Номер автобуса">
+            <input class="field" type="text" name="numberBus" id="numberBus" placeholder="Номер автобуса">
             <br>
-            <input type="text" name="driverName" id="driverName" placeholder="Имя водителя">
+            <input class="field" type="text" name="driverName" id="driverName" placeholder="Имя водителя">
             <br>
-            <input type="text" name="arrivalTime" id="arrivalTime" placeholder="Время прибытия в депо">
+            <input class="field" type="text" name="arrivalTime" id="arrivalTime" placeholder="Время прибытия в депо">
             <br>
-            <input type="text" name="departureTime" id="departureTime" placeholder="Время отправки из депо">
+            <input class="field" type="text" name="departureTime" id="departureTime" placeholder="Время отправки из депо">
             <br>
 
-            <button type="submit" onclick="submitForm()">Submit</button>
+            <button class="button" type="submit" onclick="submitForm()">Submit</button>
         </form>
     </dev>
 
